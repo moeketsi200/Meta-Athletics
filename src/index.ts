@@ -4,6 +4,8 @@ import { engine } from '@dcl/sdk/ecs'
 
 import { changeColorSystem, circularSystem } from './systems'
 import { throwerStateMachineSystem, jumperStateMachineSystem } from './systems/stateMachines'
+import { kinematicSystem } from './systems/physics'
+import { jumpPhysicsSystem } from './systems/jumpPhysics'
 import { setupUi } from './ui'
 
 export function main() {
@@ -12,6 +14,8 @@ export function main() {
   engine.addSystem(changeColorSystem)
   engine.addSystem(throwerStateMachineSystem)
   engine.addSystem(jumperStateMachineSystem)
+  engine.addSystem(kinematicSystem)
+  engine.addSystem(jumpPhysicsSystem)
 
   // draw UI. Here is the logic to spawn cubes.
   setupUi()

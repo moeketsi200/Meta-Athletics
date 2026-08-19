@@ -11,8 +11,8 @@ The core philosophy remains: **Fun → Physics → Verification → Multiplayer 
 - [x] Set up a local SDK 7 project using the Creator Hub.
 - [x] Create the `EventConfig` data structures.
 - [x] Implement the `ThrowerState`/`JumperState` state machines.
-- [ ] Build the base `KinematicSystem` (Throwing Physics Engine).
-- [ ] Build the base `JumpPhysicsSystem` (Jumping Physics Engine).
+- [x] Build the base `KinematicSystem` (Throwing Physics Engine).
+- [x] Build the base `JumpPhysicsSystem` (Jumping Physics Engine).
 - [ ] Write the universal `FoulSystem` capable of reading different event rules.
 
 ## 📝 Phase 2: Throwing Events

@@ -40,6 +40,25 @@ export const JumperState = engine.defineComponent('meta_athletics_jumper_state',
   currentEvent: Schemas.String, // Cast as EventType
   runupSpeed: Schemas.Float,
   takeoffAngle: Schemas.Float,
-  startTime: Schemas.Double,
   jumpId: Schemas.String
+})
+
+export const ProjectileComponent = engine.defineComponent('meta_athletics_projectile', {
+  isFlying: Schemas.Boolean,
+  velocity: Schemas.Float,
+  angle: Schemas.Float,
+  gravity: Schemas.Float,
+  startTime: Schemas.Double,
+  startPosition: Schemas.Vector3,
+  direction: Schemas.Vector3
+})
+
+export const JumperPhysicsComponent = engine.defineComponent('meta_athletics_jumper_physics', {
+  isJumping: Schemas.Boolean,
+  runupSpeed: Schemas.Float,
+  takeoffAngle: Schemas.Float,
+  gravity: Schemas.Float,
+  startTime: Schemas.Double,
+  startPosition: Schemas.Vector3,
+  direction: Schemas.Vector3
 })
