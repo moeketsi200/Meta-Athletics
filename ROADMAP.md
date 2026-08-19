@@ -9,7 +9,7 @@ The core philosophy remains: **Fun → Physics → Verification → Multiplayer 
 **Goal:** Build the reusable architecture, ECS state, and data-driven event configuration.
 
 - [x] Set up a local SDK 7 project using the Creator Hub.
-- [ ] Create the `EventConfig` data structures.
+- [x] Create the `EventConfig` data structures.
 - [ ] Implement the `ThrowerState`/`JumperState` state machines.
 - [ ] Build the base `KinematicSystem` (Throwing Physics Engine).
 - [ ] Build the base `JumpPhysicsSystem` (Jumping Physics Engine).
