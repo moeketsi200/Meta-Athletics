@@ -13,7 +13,7 @@ The core philosophy remains: **Fun → Physics → Verification → Multiplayer 
 - [x] Implement the `ThrowerState`/`JumperState` state machines.
 - [x] Build the base `KinematicSystem` (Throwing Physics Engine).
 - [x] Build the base `JumpPhysicsSystem` (Jumping Physics Engine).
-- [ ] Write the universal `FoulSystem` capable of reading different event rules.
+- [x] Write the universal `FoulSystem` capable of reading different event rules.
 
 ## 📝 Phase 2: Throwing Events
 **Goal:** Implement the 4 throwing events using the Throwing Physics Engine.

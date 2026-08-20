@@ -62,3 +62,9 @@ export const JumperPhysicsComponent = engine.defineComponent('meta_athletics_jum
   startPosition: Schemas.Vector3,
   direction: Schemas.Vector3
 })
+
+export const EventEnvironment = engine.defineComponent('meta_athletics_environment', {
+  foulLineZ: Schemas.Float, // For runway containment / board takeoff
+  circleCenter: Schemas.Vector3, // For circle containment
+  circleRadius: Schemas.Float,
+})
