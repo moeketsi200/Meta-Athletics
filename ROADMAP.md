@@ -18,11 +18,11 @@ The core philosophy remains: **Fun → Physics → Verification → Multiplayer 
 ## 📝 Phase 2: Throwing Events
 **Goal:** Implement the 4 throwing events using the Throwing Physics Engine.
 
-- [ ] **Javelin:** Implement base power/angle meters.
-- [ ] **Shot Put:** Add the technique timing window.
-- [ ] **Discus:** Add rotation timing mechanics.
-- [ ] **Hammer:** Implement rotational momentum building (multiple timing clicks).
-- [ ] Ensure all 4 events are fully playable locally with accurate physics.
+- [x] **Javelin:** Implement base power/angle meters.
+- [x] **Shot Put:** Add the technique timing window.
+- [x] **Discus:** Add rotation timing mechanics.
+- [x] **Hammer:** Implement rotational momentum building (multiple timing clicks).
+- [x] Ensure all 4 events are fully playable locally with accurate physics.
 
 ## 📝 Phase 3: Jumping Events
 **Goal:** Implement the 4 jumping events using the Jumping Physics Engine.

@@ -21,6 +21,9 @@ export const ThrowerState = engine.defineComponent('meta_athletics_thrower_state
   currentEvent: Schemas.String, // Cast as EventType
   power: Schemas.Float,
   angle: Schemas.Float,
+  technique: Schemas.Float,
+  techniqueSum: Schemas.Float,
+  clickCount: Schemas.Int,
   startTime: Schemas.Double,
   throwId: Schemas.String
 })

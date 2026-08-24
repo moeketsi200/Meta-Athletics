@@ -47,6 +47,14 @@
   ],
   "featureToggles": {
     "voiceChat": "enabled",
-    "portableExperiences": "enabled"
+    "portableExperiences": "enabled",
+    "nearbyVoiceChat": "enabled"
+  },
+  "creator": "",
+  "skyboxConfig": {},
+  "landscapeTerrain": true,
+  "source": {
+    "origin": "creator-hub",
+    "projectId": "d5619485-43d2-4606-8952-8c89d50eec00"
   }
 }

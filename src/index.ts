@@ -7,6 +7,7 @@ import { throwerStateMachineSystem, jumperStateMachineSystem } from './systems/s
 import { kinematicSystem } from './systems/physics'
 import { jumpPhysicsSystem } from './systems/jumpPhysics'
 import { foulSystem } from './systems/foulSystem'
+import { metersSystem } from './systems/meters'
 import { setupUi } from './ui'
 
 export function main() {
@@ -18,6 +19,7 @@ export function main() {
   engine.addSystem(kinematicSystem)
   engine.addSystem(jumpPhysicsSystem)
   engine.addSystem(foulSystem)
+  engine.addSystem(metersSystem)
 
   // draw UI. Here is the logic to spawn cubes.
   setupUi()

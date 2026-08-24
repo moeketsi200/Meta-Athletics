@@ -5,13 +5,13 @@ import { EVENT_CONFIGS, EventType, FoulRules } from '../events/EventConfig'
 
 type EnvironmentData = ReturnType<typeof EventEnvironment.get>
 
-interface AthleteFoulParams<T> {
-  athleteState: T;
+interface AthleteFoulParams {
+  athleteState: { state: number, currentEvent: string };
   isActive: (state: number) => boolean;
-  foulStateValue: number;
   athleteType: string;
   position: Vector3;
   environment: EnvironmentData;
+  onFoul: () => void;
 }
 
 export function foulSystem(dt: number) {
@@ -24,23 +24,27 @@ export function foulSystem(dt: number) {
   
   if (ThrowerState.has(playerEntity)) {
     processAthleteFoul({
-      athleteState: ThrowerState.getMutable(playerEntity),
+      athleteState: ThrowerState.get(playerEntity),
       isActive: isActiveThrowerState,
-      foulStateValue: PlayerThrowState.FOUL,
       athleteType: 'Thrower',
       position,
-      environment
+      environment,
+      onFoul: () => {
+        ThrowerState.getMutable(playerEntity).state = PlayerThrowState.FOUL
+      }
     })
   }
   
   if (JumperState.has(playerEntity)) {
     processAthleteFoul({
-      athleteState: JumperState.getMutable(playerEntity),
+      athleteState: JumperState.get(playerEntity),
       isActive: isActiveJumperState,
-      foulStateValue: PlayerJumpState.FOUL,
       athleteType: 'Jumper',
       position,
-      environment
+      environment,
+      onFoul: () => {
+        JumperState.getMutable(playerEntity).state = PlayerJumpState.FOUL
+      }
     })
   }
 }
@@ -52,7 +56,7 @@ function getActiveEnvironment(): EnvironmentData | null {
   return null
 }
 
-function processAthleteFoul<T extends { state: number, currentEvent: string }>(params: AthleteFoulParams<T>) {
+function processAthleteFoul(params: AthleteFoulParams) {
   if (!params.isActive(params.athleteState.state)) return
   
   const currentEvent = params.athleteState.currentEvent as EventType
@@ -62,7 +66,7 @@ function processAthleteFoul<T extends { state: number, currentEvent: string }>(p
   
   if (hasCommittedFoul(rules, params.position, params.environment)) {
     console.log(`FoulSystem: ${params.athleteType} fouled in ${currentEvent}!`)
-    params.athleteState.state = params.foulStateValue
+    params.onFoul()
   }
 }
 
